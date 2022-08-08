@@ -1,5 +1,9 @@
 package zama.learning;
 
+import org.zama.test1.ComTestService;
+
+import com.zama.test1.OrgTestService;
+
 import zama.learning.invoice.InvoiceService;
 import zama.learning.payment.PaymentService;
 import zama.learning.pr.PrService;
@@ -11,6 +15,8 @@ public class AppDemo {
 
 	public static void main(String[] args) throws InterruptedException {
 		while(true) {
+			ComTestService.comTest();
+			OrgTestService.orgTestService();
 			PaymentService.getPayments();
 			InvoiceService.getInvoices();
 			ReportService.getReports();

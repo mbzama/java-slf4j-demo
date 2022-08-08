@@ -10,7 +10,8 @@
 			<PatternLayout pattern="${LOG_PATTERN}" />
 		</Console>
 
-		<RollingFile name="app" fileName="app.log" filePattern="app-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="app" fileName="app.log"
+			filePattern="app-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
@@ -20,7 +21,8 @@
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
 
-		<RollingFile name="app-pr" fileName="app-pr.log" filePattern="app-pr-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="app-pr" fileName="app-pr.log"
+			filePattern="app-pr-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
@@ -29,8 +31,9 @@
 			</Policies>
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
-		
-		<RollingFile name="app-payment" fileName="app-payment.log" filePattern="app-payment-%d{yyyy-MM-dd}-%i.log">
+
+		<RollingFile name="app-payment" fileName="app-payment.log"
+			filePattern="app-payment-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
@@ -41,17 +44,22 @@
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="zama.learning.payment" additivity="false">
+		<Logger name="*" additivity="true">
+			<AppenderRef ref="app" />
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Logger name="zama.learning.payment" additivity="true">
 			<AppenderRef ref="app-payment" />
 			<AppenderRef ref="Console" />
 		</Logger>
-		
-		<Logger name="zama.learning.pr.PrService" additivity="false">
+
+		<Logger name="zama.learning.pr.PrService" additivity="true">
 			<AppenderRef ref="app-pr" />
 			<AppenderRef ref="Console" />
 		</Logger>
-		
-		<Logger name="zama.learning.pr.PrServiceV2" additivity="false">
+
+		<Logger name="zama.learning.pr.PrServiceV2" additivity="true">
 			<AppenderRef ref="app-pr" />
 			<AppenderRef ref="Console" />
 		</Logger>
