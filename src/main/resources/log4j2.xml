@@ -50,6 +50,11 @@
 			<AppenderRef ref="app-pr" />
 			<AppenderRef ref="Console" />
 		</Logger>
+		
+		<Logger name="zama.learning.pr.PrServiceV2" additivity="false">
+			<AppenderRef ref="app-pr" />
+			<AppenderRef ref="Console" />
+		</Logger>
 
 		<Root level="INFO">
 			<AppenderRef ref="app" />
