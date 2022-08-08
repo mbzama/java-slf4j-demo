@@ -10,9 +10,7 @@
 			<PatternLayout pattern="${LOG_PATTERN}" />
 		</Console>
 
-		<RollingFile name="app"
-			fileName="app.log"
-			filePattern="app-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="app" fileName="app.log" filePattern="app-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
@@ -22,9 +20,7 @@
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
 
-		<RollingFile name="app-pr"
-			fileName="app-pr.log"
-			filePattern="app-pr-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="app-pr" fileName="app-pr.log" filePattern="app-pr-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
@@ -34,9 +30,7 @@
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
 		
-		<RollingFile name="app-payment"
-			fileName="app-payment.log"
-			filePattern="app-payment-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="app-payment" fileName="app-payment.log" filePattern="app-payment-%d{yyyy-MM-dd}-%i.log">
 			<LevelRangeFilter minLevel="ERROR" maxLevel="INFO"
 				onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout pattern="${LOG_PATTERN}" />
